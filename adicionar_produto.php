@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro: O preço do produto deve ser um número válido.");
     }
 
-    // Modificação aqui: verifica se a conexão foi estabelecida corretamente
     if ($conn === false) {
         die(print_r(sqlsrv_errors(), true));
     }
@@ -25,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO produtos (nome_produto, descricao_produto, preco_produto, id_categoria) VALUES (?, ?, ?, ?)";
     $params = array($nome_produto, $descricao_produto, $preco_produto, $id_categoria);
 
-    // Modificação aqui: utiliza a função sqlsrv_query para executar a consulta
     $stmt = sqlsrv_query($conn, $query, $params);
 
     if ($stmt === false) {

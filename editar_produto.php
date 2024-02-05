@@ -91,8 +91,6 @@ if (isset($_GET['id'])) {
         </div>
         <button type="submit" class="btn btn-primary">Salvar Alterações</button>
     </form>
-
-    <!-- Adicione um botão "Voltar" para o listar produtos -->
     <a href="produtos.php" class="btn btn-secondary mt-3">Voltar para Listar Produtos</a>
 </div>
 <script>
